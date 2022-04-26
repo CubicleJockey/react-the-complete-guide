@@ -398,3 +398,4 @@ FodyWeavers.xsd
 *.sln.iml
 expense-tracker/.eslintcache
 .DS_Store
+expense-tracker/.eslintcache
