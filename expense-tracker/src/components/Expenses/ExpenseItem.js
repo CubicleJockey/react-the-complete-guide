@@ -8,7 +8,7 @@ const ExpenseItem = (props) => {
   const [title, setTitle] = useState(props.title); //React Hook
 
   const clickHandler = () => {
-    setTitle('Updated!');
+    setTitle(`Updated: [${(new Date())}]`);
   };
 
   return (
