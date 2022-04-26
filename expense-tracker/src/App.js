@@ -1,4 +1,3 @@
-//import React from 'react';
 import Expenses from "./components/Expenses/Expenses";
 
 const App = () => {
@@ -12,12 +11,12 @@ const App = () => {
   return (
     <div>
       <h2>Let's get started!</h2>
-      <Expenses items={expenses} />
+      <Expenses items={expenses} key={'expense-list'}/>
     </div>
   );
 
   // How it's done without syntatic sugar. Requires React import.
-  //
+  //import React from 'react';
   // return React.createElement(
   //   'div'
   //   ,{}
