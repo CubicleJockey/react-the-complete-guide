@@ -15,22 +15,29 @@ const ExpenseForm = () => {
     });
 
     const titleChangeHandler = (event) => {
-        setInputs({
-            ...inputs,
-            title: event.target.value
+        //setTitle(event.target.value);
+        // setInputs({
+        //     ...inputs,
+        //     title: event.target.value
+        // });
+
+        //NOTE: React schedules changes, previous model could
+        // cause the function to retrieve an outdated state.
+        setInputs((previousState) => {
+            return {...previousState, title: event.target.value };
         });
     };
     const amountChangedHandler = (event) => {
-        setInputs({
-            ...inputs,
-            amount: event.target.value
+        //setAmount(event.target.value);
+        setInputs((previousState) => {
+            return { ...previousState, amount: event.target.value };
         });
     };
 
     const dateChangedHandler = (event) => {
-        setInputs({
-            ...inputs,
-            date: event.target.value
+        //setDate(event.target.value);
+        setInputs((previousState) => {
+            return { ...previousState, date: event.target.value };
         });
     };
 
