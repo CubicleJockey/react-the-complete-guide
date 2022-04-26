@@ -3,19 +3,35 @@ import './ExpenseForm.css'
 import { useState } from 'react';
 
 const ExpenseForm = () => {
-    const [title, setTitle] = useState('');
-    const [amount, setAmount] = useState('');
-    const [date, setDate] = useState('');
+    // const [title, setTitle] = useState('');
+    // const [amount, setAmount] = useState('');
+    // const [date, setDate] = useState('');
+
+    //Use an inline object model
+    const[inputs, setInputs] = useState({
+         title: ''
+        ,amount: ''
+        ,date: ''
+    });
 
     const titleChangeHandler = (event) => {
-        setTitle(event.target.value);
+        setInputs({
+            ...inputs,
+            title: event.target.value
+        });
     };
     const amountChangedHandler = (event) => {
-        setAmount(event.target.value);
+        setInputs({
+            ...inputs,
+            amount: event.target.value
+        });
     };
 
     const dateChangedHandler = (event) => {
-        setDate(event.target.value);
+        setInputs({
+            ...inputs,
+            date: event.target.value
+        });
     };
 
     return(
