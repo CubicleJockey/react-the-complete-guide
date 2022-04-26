@@ -1,7 +1,7 @@
 import './ExpenseForm.css'
 import { useState } from 'react';
 
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
     const [inputTitle, setTitle] = useState('');
     const [inputAmount, setAmount] = useState('');
     const [inputDate, setDate] = useState('');
@@ -49,7 +49,7 @@ const ExpenseForm = () => {
             date: new Date(inputDate)
         };
 
-        console.log(expense);
+        props.onAddNewExpense(expense);
 
         //NOTE: after two-way binding is enabled with value={/*state object*/}
         setTitle('');
