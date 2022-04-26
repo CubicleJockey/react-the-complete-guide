@@ -5,16 +5,17 @@ import { useState } from 'react';
 const ExpenseForm = () => {
     const [title, setTitle] = useState('');
     const [amount, setAmount] = useState('');
+    const [date, setDate] = useState('');
 
     const titleChangeHandler = (event) => {
-
+        setTitle(event.target.value);
     };
     const amountChangedHandler = (event) => {
-
+        setAmount(event.target.value);
     };
 
     const dateChangedHandler = (event) => {
-
+        setDate(event.target.value);
     };
 
     return(
