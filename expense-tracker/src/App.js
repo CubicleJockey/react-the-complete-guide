@@ -1,4 +1,5 @@
 import Expenses from "./components/Expenses/Expenses";
+import NewExpense from "./components/NewExpense/NewExpense";
 
 const App = () => {
   const expenses = [
@@ -9,10 +10,10 @@ const App = () => {
   ];
 
   return (
-    <div>
-      <h2>Let's get started!</h2>
+    <main>
+      <NewExpense />
       <Expenses items={expenses} key={'expense-list'}/>
-    </div>
+    </main>
   );
 
   // How it's done without syntatic sugar. Requires React import.
