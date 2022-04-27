@@ -3,25 +3,24 @@ import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
 import {v4 as Guid } from 'uuid';
 
+const seedExpenses = [
+  { id: Guid(), title: 'Toilet Paper', amount: 94.12, date: new Date(2020, 7, 14) }
+ ,{ id: Guid(), title: 'New TV', amount: 799.49, date: new Date(2021, 2, 12) }
+ ,{ id: Guid(), title: 'Car Insurance', amount: 294.67, date: new Date(2021, 2, 28) }
+ ,{ id: Guid(), title: 'New Desk (Wooden)', amount: 450, date: new Date(2021, 5, 12) }
+];
+
 const App = () => {
-  const [expenses, setExpenses] = useState([
-    { id: Guid(), title: 'Toilet Paper', amount: 94.12, date: new Date(2020, 7, 14) }
-   ,{ id: Guid(), title: 'New TV', amount: 799.49, date: new Date(2021, 2, 12) }
-   ,{ id: Guid(), title: 'Car Insurance', amount: 294.67, date: new Date(2021, 2, 28)}
-   ,{ id: Guid(), title: 'New Desk (Wooden)', amount: 450, date: new Date(2021, 5, 12)}
- ])
+  const [expenses, setExpenses] = useState(seedExpenses);
 
-  const addExpenseHandler = (expense) =>{
-     expenses.push(expense);
-     setExpenses(expenses);
-
-     console.log(expenses);
+  const addExpenseHandler = (expense) => {
+    setExpenses((previousExpenses) => [expense, ...previousExpenses]);
   };
 
   return (
     <main>
       <NewExpense onAddExpense={addExpenseHandler}/>
-      <Expenses items={expenses} key={'expense-list'}/>
+      <Expenses items={expenses} />
     </main>
   );
 
