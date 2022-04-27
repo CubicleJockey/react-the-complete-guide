@@ -1,6 +1,6 @@
 import ExpenseForm from './ExpenseForm';
 import './NewExpense.css';
-import {v4 as Guid } from 'uuid';
+import { v4 as Guid } from 'uuid';
 
 const NewExpense = (props) => {
     const addExpenseHandler = (newExpense) => {
