@@ -1,8 +1,10 @@
 import { useState } from 'react';
+import Wrapper from '../Helpers/Wrapper';
 import Button from '../UI/Button';
 import Card from '../UI/Card';
 import ErrorModal from '../UI/ErrorModal';
 import styles from './AddUser.module.css';
+
 
 const AddUser = props => {
     const [username, setUsername] = useState('');
@@ -39,7 +41,7 @@ const AddUser = props => {
     const ageChangeHandler = (event) => setAge(event.target.value);
 
     return (
-        <section id="add-user-control">
+        <Wrapper>
             { error && <ErrorModal title={error.title} message={error.message} onConfirmClick={onConfirmHandler}/> }
             <Card className={styles.input}>
                 <form onSubmit={addUserHandler}>
@@ -50,7 +52,7 @@ const AddUser = props => {
                     <Button type="submit">Add User</Button>
                 </form>
             </Card>
-        </section>
+        </Wrapper>
     );
 };
 
