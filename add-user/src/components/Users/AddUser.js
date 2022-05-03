@@ -7,6 +7,7 @@ import styles from './AddUser.module.css';
 
 
 //Ref is great for just reading a value when state is not important.
+//Also Known as uncontrolled components, not controlled by React.
 const AddUser = props => {
     const usernameRef = useRef();
     const ageRef = useRef();
