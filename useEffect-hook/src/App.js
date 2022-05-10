@@ -15,7 +15,7 @@ function App() {
     if(isLoggedInLocalStorage === '1'){
       setIsLoggedIn(true);
     }
-  }, []);
+  }, []); //No dependencies just run once.
 
   const loginHandler = (email, password) => {
     // We should of course check email and password
