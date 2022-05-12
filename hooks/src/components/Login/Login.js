@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect, useReducer } from 'react';
 
 import Card from '../UI/Card/Card';
 import classes from './Login.module.css';
@@ -25,9 +25,9 @@ const Login = (props) => {
     //Runs before each run of useEffect AFTER the 
     //first time and when unmounting from the DOM
     return () => {
-      console.log('CLEAN-UP');
-      clearTimeout(timerId);
-    };
+        console.log('CLEAN-UP');
+        clearTimeout(timerId);
+      };
     }, [enteredEmail, enteredPassword]
   );
 
